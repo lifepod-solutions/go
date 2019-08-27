@@ -26,7 +26,7 @@ import (
 	"strings"
 	"sync"
 
-	"internal/x/net/idna"
+	"github.com/lifepod-solutions/go/src/internal/x/net/idna"
 )
 
 const (

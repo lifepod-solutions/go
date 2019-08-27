@@ -44,9 +44,9 @@ import (
 	"sync"
 	"time"
 
-	"internal/x/net/http/httpguts"
-	"internal/x/net/http2/hpack"
-	"internal/x/net/idna"
+	"github.com/lifepod-solutions/go/src/internal/x/net/http/httpguts"
+	"github.com/lifepod-solutions/go/src/internal/x/net/http2/hpack"
+	"github.com/lifepod-solutions/go/src/internal/x/net/idna"
 )
 
 // A list of the possible cipher suite ids. Taken from

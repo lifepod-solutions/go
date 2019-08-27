@@ -9,7 +9,7 @@ package norm
 import (
 	"unicode/utf8"
 
-	"internal/x/text/transform"
+	"github.com/lifepod-solutions/go/src/internal/x/text/transform"
 )
 
 // Reset implements the Reset method of the transform.Transformer interface.

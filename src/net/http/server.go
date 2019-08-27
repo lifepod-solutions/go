@@ -29,7 +29,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"internal/x/net/http/httpguts"
+	"github.com/lifepod-solutions/go/src/internal/x/net/http/httpguts"
 )
 
 // Errors used by the HTTP server.

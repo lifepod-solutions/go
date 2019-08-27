@@ -19,7 +19,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"internal/x/net/idna"
+	"github.com/lifepod-solutions/go/src/internal/x/net/idna"
 )
 
 // Config holds configuration for HTTP proxy settings. See

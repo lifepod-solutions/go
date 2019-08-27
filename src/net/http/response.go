@@ -12,12 +12,13 @@ import (
 	"crypto/tls"
 	"errors"
 	"fmt"
-	"internal/x/net/http/httpguts"
 	"io"
 	"net/textproto"
 	"net/url"
 	"strconv"
 	"strings"
+
+	"github.com/lifepod-solutions/go/src/internal/x/net/http/httpguts"
 )
 
 var respExcludeHeader = map[string]bool{

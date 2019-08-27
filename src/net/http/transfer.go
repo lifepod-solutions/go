@@ -12,7 +12,6 @@ import (
 	"io"
 	"io/ioutil"
 	"net/http/httptrace"
-	"net/http/internal"
 	"net/textproto"
 	"reflect"
 	"sort"
@@ -21,7 +20,8 @@ import (
 	"sync"
 	"time"
 
-	"internal/x/net/http/httpguts"
+	"github.com/lifepod-solutions/go/src/internal/x/net/http/httpguts"
+	"github.com/lifepod-solutions/go/src/net/http/internal"
 )
 
 // ErrLineTooLong is returned when reading request or response bodies

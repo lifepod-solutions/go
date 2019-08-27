@@ -9,7 +9,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"internal/x/net/idna"
+	"github.com/lifepod-solutions/go/src/internal/x/net/idna"
 )
 
 var isTokenTable = [127]bool{

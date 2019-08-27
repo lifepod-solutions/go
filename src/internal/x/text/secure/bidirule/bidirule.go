@@ -14,8 +14,8 @@ import (
 	"errors"
 	"unicode/utf8"
 
-	"internal/x/text/transform"
-	"internal/x/text/unicode/bidi"
+	"github.com/lifepod-solutions/go/src/internal/x/text/transform"
+	"github.com/lifepod-solutions/go/src/internal/x/text/unicode/bidi"
 )
 
 // This file contains an implementation of RFC 5893: Right-to-Left Scripts for

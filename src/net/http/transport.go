@@ -30,8 +30,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"internal/x/net/http/httpguts"
-	"internal/x/net/http/httpproxy"
+	"github.com/lifepod-solutions/go/src/internal/x/net/http/httpguts"
+	"github.com/lifepod-solutions/go/src/internal/x/net/http/httpproxy"
 )
 
 // DefaultTransport is the default implementation of Transport and is

@@ -12,7 +12,7 @@ package norm
 import (
 	"unicode/utf8"
 
-	"internal/x/text/transform"
+	"github.com/lifepod-solutions/go/src/internal/x/text/transform"
 )
 
 // A Form denotes a canonical representation of Unicode code points.

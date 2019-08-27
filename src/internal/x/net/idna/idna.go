@@ -20,9 +20,9 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"internal/x/text/secure/bidirule"
-	"internal/x/text/unicode/bidi"
-	"internal/x/text/unicode/norm"
+	"github.com/lifepod-solutions/go/src/internal/x/text/secure/bidirule"
+	"github.com/lifepod-solutions/go/src/internal/x/text/unicode/bidi"
+	"github.com/lifepod-solutions/go/src/internal/x/text/unicode/norm"
 )
 
 // NOTE: Unlike common practice in Go APIs, the functions will return a
