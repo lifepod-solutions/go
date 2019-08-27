@@ -2538,6 +2538,20 @@ type Server struct {
 	// ConnState type and associated constants for details.
 	ConnState func(net.Conn, ConnState)
 
+	// BaseContext optionally specifies a function that returns
+	// the base context for incoming requests on this server.
+	// The provided Listener is the specific Listener that's
+	// about to start accepting requests.
+	// If BaseContext is nil, the default is context.Background().
+	// If non-nil, it must return a non-nil context.
+	BaseContext func(net.Listener) context.Context
+
+	// ConnContext optionally specifies a function that modifies
+	// the context used for a newly connection c. The provided ctx
+	// is derived from the base context and has a ServerContextKey
+	// value.
+	ConnContext func(ctx context.Context, c net.Conn) context.Context
+
 	OnPingFrame func(net.Conn)
 	// ErrorLog specifies an optional logger for errors accepting
 	// connections, unexpected behavior from handlers, and
@@ -2878,6 +2892,12 @@ func (srv *Server) Serve(l net.Listener) error {
 				continue
 			}
 			return e
+		}
+		if cc := srv.ConnContext; cc != nil {
+			ctx = cc(ctx, rw)
+			if ctx == nil {
+				panic("ConnContext returned nil")
+			}
 		}
 		tempDelay = 0
 		c := srv.newConn(rw)
