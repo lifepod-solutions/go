@@ -1798,7 +1798,7 @@ func (c *conn) serve(ctx context.Context) {
 		*c.tlsState = tlsConn.ConnectionState()
 		if proto := c.tlsState.NegotiatedProtocol; validNPN(proto) {
 			if fn := c.server.TLSNextProto[proto]; fn != nil {
-				h := initNPNRequest{tlsConn, serverHandler{c.server}}
+				h := initNPNRequest{ctx, tlsConn, serverHandler{c.server}}
 				fn(c.server, tlsConn, h)
 			}
 			return
@@ -3306,9 +3306,12 @@ func (globalOptionsHandler) ServeHTTP(w ResponseWriter, r *Request) {
 // uninitialized fields in its *Request. Such partially-initialized
 // Requests come from NPN protocol handlers.
 type initNPNRequest struct {
-	c *tls.Conn
-	h serverHandler
+	ctx context.Context
+	c   *tls.Conn
+	h   serverHandler
 }
+
+func (h initNPNRequest) BaseContext() context.Context { return h.ctx }
 
 func (h initNPNRequest) ServeHTTP(rw ResponseWriter, req *Request) {
 	if req.TLS == nil {
