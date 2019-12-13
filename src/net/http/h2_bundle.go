@@ -4973,7 +4973,7 @@ func (sc *http2serverConn) processFrame(f http2Frame) error {
 		if err == nil {
 			sc.hs.OnPingFrame(sc.conn)
 		}
-		return sc.processPing(f)
+		return err
 	case *http2DataFrame:
 		return sc.processData(f)
 	case *http2RSTStreamFrame:
