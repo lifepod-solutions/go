@@ -4977,7 +4977,7 @@ func (sc *http2serverConn) processFrame(f http2Frame) error {
 	case *http2WindowUpdateFrame:
 		return sc.processWindowUpdate(f)
 	case *http2PingFrame:
-		return sc.processPing(f)
+		return err
 	case *http2DataFrame:
 		return sc.processData(f)
 	case *http2RSTStreamFrame:
