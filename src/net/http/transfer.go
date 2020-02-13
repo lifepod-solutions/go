@@ -12,7 +12,7 @@ import (
 	"io"
 	"io/ioutil"
 	"net/http/httptrace"
-	"net/http/internal"
+	"github.com/lifepod-solutions/go/src/net/http/internal"
 	"net/textproto"
 	"reflect"
 	"sort"
