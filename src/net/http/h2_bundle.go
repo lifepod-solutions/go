@@ -4977,6 +4977,10 @@ func (sc *http2serverConn) processFrame(f http2Frame) error {
 	case *http2WindowUpdateFrame:
 		return sc.processWindowUpdate(f)
 	case *http2PingFrame:
+		err := sc.processPing(f)
+		if err == nil {
+			sc.hs.OnPingFrame(sc.conn)
+		}
 		return err
 	case *http2DataFrame:
 		return sc.processData(f)

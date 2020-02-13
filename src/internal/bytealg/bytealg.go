@@ -5,7 +5,7 @@
 package bytealg
 
 import (
-	"internal/cpu"
+	"github.com/lifepod-solutions/go/src/internal/cpu"
 	"unsafe"
 )
 
